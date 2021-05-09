@@ -1,7 +1,7 @@
-import Logger from '../../core/logger.js'
-import {Sequelize} from "sequelize-cockroachdb"
-import {ccDB} from "../../config.js"
-import {StudentModel} from './models/StudentModel.js'
+import Logger from "../../core/loggerHandler.js";
+import { Sequelize } from "sequelize-cockroachdb";
+import { ccDB } from "../../config.js";
+import { StudentModel } from "./models/StudentModel.js";
 
 if (!Sequelize.supportsCockroachDB) {
   throw new Error("CockroachDB dialect for Sequelize not installed");
@@ -28,15 +28,17 @@ export const sequelize = new Sequelize({
 
 export const models = {
   Student: StudentModel(sequelize),
-  sequelize:sequelize
-}
+  sequelize: sequelize,
+};
 
 export const connectToCockroachDB = async () => {
   try {
-    await sequelize.authenticate()
+    await sequelize.authenticate();
     //await sequelize.sync({force: true})
-    Logger.info(`CockroachDB ☁ Cloud | ${ccDB.ccDatabase} | User: ${ccDB.ccUser} | Connection Established ✅`)
+    Logger.info(
+      `CockroachDB ☁ Cloud | ${ccDB.ccDatabase} | User: ${ccDB.ccUser} | Connection Established ✅`
+    );
   } catch (e) {
-    Logger.error(e)
+    Logger.error(e);
   }
-}
+};

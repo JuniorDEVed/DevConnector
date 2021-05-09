@@ -14,9 +14,10 @@ export class BadRequestError extends Error {
     Malformed request due to a faulty browser
     Malformed request due to human error when manually forming HTTP requests (e.g. using curl incorrectly)
   */
-  constructor(message = "Bad Request error") {
-    super(message);
-    this.statusCode = 400
+  constructor(message = "Bad Request error", errorsList) {
+    super(message, errorsList);
+    this.statusCode = 400;
+    this.errorsList = errorsList;
   }
 }
 
@@ -30,7 +31,7 @@ export class UnauthorizedError extends Error {
   */
   constructor(message) {
     super(message);
-    this.statusCode = 401
+    this.statusCode = 401;
   }
 }
 
@@ -47,7 +48,7 @@ export class NotFoundError extends Error {
    */
   constructor(message) {
     super(message);
-    this.statusCode = 404
+    this.statusCode = 404;
   }
 }
 
@@ -59,13 +60,13 @@ export class ForbiddenError extends Error {
   */
   constructor(message = "Forbidden Error") {
     super(message);
-    this.statusCode = 403
+    this.statusCode = 403;
   }
 }
 
 export class InternalServerError extends Error {
   constructor(message) {
     super(message);
-    this.statusCode = 500
+    this.statusCode = 500;
   }
 }

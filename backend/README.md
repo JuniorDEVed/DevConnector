@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="350" src="./assets_repo/animatedSVG.svg"/>
+   <img width="350" src="assets/animatedSVG.svg"/>
 </P>
 
 [![JuniorDEV.life](https://img.shields.io/badge/AfterAcademy-opensource-blue.svg)](https://juniorDEV.life) [![Build Status](https://travis-ci.org/afteracademy/nodejs-backend-architecture-typescript.svg?branch=master)](https://travis-ci.org/afteracademy/nodejs-backend-architecture-typescript)
@@ -161,5 +161,3 @@ The main focus will be to create a maintainable and highly testable architecture
 
 ### Find this project useful ? :heart:
 * Support it by clicking the :star: button on the upper right of this page. :v:
-     
- 
